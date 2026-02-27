@@ -77,7 +77,7 @@ pipeline {
                 }    
             }
         }
-        stage('k8-Deplo') {
+        stage('k8-Deploy') {
             steps {
                 withKubeConfig(caCertificate: '', clusterName: 'devopsshack-cluster', contextName: '', credentialsId: 'k8-cred', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://D8AF6363D75B0D85C95650BC47763234.gr7.us-east-1.eks.amazonaws.com') {
                     sh "kubectl apply -f deployment-service.yml"
